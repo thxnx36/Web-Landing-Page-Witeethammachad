@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Product List Landing Page - บ้านสวนวิถีธรรมชาติ
 
-## Getting Started
+โปรเจคนี้เป็นเว็บไซต์แสดงรายการสินค้าของ "บ้านสวนวิถีธรรมชาติ" ซึ่งพัฒนาด้วย [Next.js](https://nextjs.org) และ TailwindCSS
 
-First, run the development server:
+## การเริ่มต้นใช้งาน
 
+### การติดตั้งและพัฒนา
+
+1. ทำการ clone repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd Product-List-Landing-Page
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. ติดตั้ง dependencies:
+```bash
+npm install
+# หรือ
+yarn install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. รันในโหมดพัฒนา:
+```bash
+npm run dev
+# หรือ
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+เปิด [http://localhost:3000](http://localhost:3000) ด้วยเบราว์เซอร์เพื่อดูผลลัพธ์
 
-## Learn More
+### การ Build และ Deploy
 
-To learn more about Next.js, take a look at the following resources:
+1. สร้างไฟล์สำหรับการ production:
+```bash
+npm run build
+# หรือ
+yarn build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. รันเว็บไซต์ในโหมด production:
+```bash
+npm run start
+# หรือ
+yarn start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## การ Deploy บน Vercel
 
-## Deploy on Vercel
+โปรเจคนี้สามารถ deploy ได้อย่างง่ายดายผ่านแพลตฟอร์ม [Vercel](https://vercel.com) โดยมีขั้นตอนดังนี้:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push โค้ดทั้งหมดขึ้น GitHub repository
+2. นำเข้า repository ใน Vercel โดยใช้ dashboard ของ Vercel
+3. Vercel จะจัดการกระบวนการ build และ deploy ให้โดยอัตโนมัติ
+4. หลังจาก deploy สำเร็จ เว็บไซต์จะพร้อมใช้งานบน URL ที่ Vercel จัดเตรียมให้
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## โครงสร้างโปรเจค
+
+```
+Product-List-Landing-Page/
+├── public/                # ไฟล์สถิตต่างๆ (รูปภาพ, ไอคอน)
+├── src/
+│   ├── app/               # หน้าหลักของแอปพลิเคชัน
+│   ├── components/        # คอมโพเนนต์ต่างๆที่ใช้ในเว็บไซต์
+│   └── data/              # ข้อมูลสินค้าและข้อมูลอื่นๆ
+├── next.config.ts         # การตั้งค่า Next.js
+├── package.json           # dependencies และ scripts
+└── README.md              # คุณกำลังอ่านไฟล์นี้อยู่!
+```
+
+## รายละเอียดเทคโนโลยีที่ใช้
+
+- **Framework**: Next.js 15
+- **UI Library**: React 19
+- **Styling**: TailwindCSS 4
+- **Animations**: Framer Motion
+- **Carousel**: Swiper
+- **Icons**: React Icons
+- **Language**: TypeScript

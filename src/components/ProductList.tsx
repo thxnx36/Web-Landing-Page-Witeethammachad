@@ -134,16 +134,6 @@ const ProductList = () => {
           >
             เครื่องดื่มสมุนไพร
           </button>
-          <button
-            onClick={() => setActiveFilter('aromatherapy')}
-            className={`px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all ${
-              activeFilter === 'aromatherapy'
-                ? 'bg-[var(--primary-green)] text-white shadow-md'
-                : 'bg-[var(--light-green)] text-gray-600 hover:text-[var(--primary-green)]'
-            }`}
-          >
-            น้ำมันหอมระเหย
-          </button>
         </div>
         
         {/* Product Grid */}
