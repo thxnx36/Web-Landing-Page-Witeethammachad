@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { products } from '@/data/products';
 import ProductCard from './ProductCard';
+import FaqButton from './FaqModal';
 import { motion } from 'framer-motion';
 
 // ประเภทสินค้าที่ใช้ในการกรอง
@@ -40,6 +41,15 @@ const ProductList = () => {
           product.id === 5 || // น้ำดื่มสุขชะลอวัย สูตรขมิ้นชัน
           product.id === 6    // น้ำดื่มสุขชะลอวัย สูตรกระชาย
         );
+      case 'aromatherapy':
+        // น้ำมันหอมระเหยและสมุนไพรสำหรับบำบัด
+        return products.filter(product => 
+          product.properties.some(prop => 
+            prop.includes('ตะไคร้หอม') || 
+            prop.includes('ลาเวนเดอร์') ||
+            prop.includes('ยูคาลิปตัส')
+          )
+        );
       default:
         return products;
     }
@@ -50,7 +60,7 @@ const ProductList = () => {
   return (
     <section className="py-12 md:py-16 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8 md:mb-12">
+        <div className="text-center mb-8 md:mb-12 relative">
           <motion.h2 
             className="text-2xl md:text-3xl font-medium mb-2 md:mb-3 text-[var(--text-dark)]"
             initial={{ opacity: 0, y: 20 }}
@@ -67,6 +77,9 @@ const ProductList = () => {
           >
             จำนวนสินค้าขึ้นอยู่กับรอบผลิต ติดตามที่หน้า Facebook
           </motion.p>
+          
+          {/* ปุ่มคำถามที่พบบ่อย */}
+          <FaqButton />
         </div>
         
         {/* Filter Buttons */}
@@ -120,6 +133,16 @@ const ProductList = () => {
             }`}
           >
             เครื่องดื่มสมุนไพร
+          </button>
+          <button
+            onClick={() => setActiveFilter('aromatherapy')}
+            className={`px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all ${
+              activeFilter === 'aromatherapy'
+                ? 'bg-[var(--primary-green)] text-white shadow-md'
+                : 'bg-[var(--light-green)] text-gray-600 hover:text-[var(--primary-green)]'
+            }`}
+          >
+            น้ำมันหอมระเหย
           </button>
         </div>
         
