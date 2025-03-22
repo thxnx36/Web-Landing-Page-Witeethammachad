@@ -70,8 +70,8 @@ export const products: Product[] = [
       }
     ],
     images: [
+      "/images/products/spray5.jpg",
       "/images/products/spray1.jpg",
-      "/images/products/spray2.jpg",
       "/images/products/spray3.jpg",
       "/images/products/spray4.jpg"
     ],
@@ -104,6 +104,7 @@ export const products: Product[] = [
       }
     ],
     images: [
+      "/images/products/toner4.jpg",
       "/images/products/toner1.jpg",
       "/images/products/toner2.jpg"
     ],
@@ -140,7 +141,7 @@ export const products: Product[] = [
       }
     ],
     images: [
-      "/images/products/king1.jpg",
+      "/images/products/king4.jpg",
       "/images/products/king2.jpg",
       "/images/products/king3.jpg"
     ],
@@ -173,8 +174,11 @@ export const products: Product[] = [
       }
     ], 
     images: [
+      "/images/products/kanplu4.jpg",
       "/images/products/kanplu1.jpg",
-      "/images/products/kanplu2.jpg"
+      "/images/products/kanplu2.jpg",
+      "/images/products/kanplu3.jpg",
+
     ],
     isPopular: true
 
@@ -212,8 +216,8 @@ export const products: Product[] = [
     ],
     
     images: [
+      "/images/products/kamin4.jpg",
       "/images/products/kamin1.jpg",
-      "/images/products/kamin2.jpg",
       "/images/products/kamin3.jpg"
     ],
     isPopular: true
@@ -254,9 +258,9 @@ export const products: Product[] = [
       }
     ],
     images: [
+      "/images/products/krachai5.jpg",
       "/images/products/krachai1.jpg",
       "/images/products/krachai2.jpg",
-      "/images/products/krachai3.jpg",
       "/images/products/krachai4.jpg"
     ],
     isPopular: true
@@ -289,6 +293,7 @@ export const products: Product[] = [
         price: 120,
       }
     ],    images: [
+      "/images/products/chaitao3.jpg",
       "/images/products/tonerchaitao2.jpg",
       "/images/products/tonerchaitao3.jpg",
     ],

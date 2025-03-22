@@ -6,7 +6,7 @@ import ProductCard from './ProductCard';
 import { motion } from 'framer-motion';
 
 // ประเภทสินค้าที่ใช้ในการกรอง
-type FilterType = 'all' | 'popular' | 'skin' | 'hair' | 'health';
+type FilterType = 'all' | 'popular' | 'skincare' | 'oral' | 'drink' | 'aromatherapy';
 
 const ProductList = () => {
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
@@ -16,26 +16,29 @@ const ProductList = () => {
     switch (activeFilter) {
       case 'popular':
         return products.filter(product => product.isPopular);
-      case 'skin':
+      case 'skincare':
+        // สินค้าเกี่ยวกับบำรุงผิวหน้าและผิวกาย
         return products.filter(product => 
-          product.name.includes('ผิว') || 
           product.name.includes('สเปรย์') || 
-          product.name.includes('ครีม') || 
-          product.name.includes('สบู่') ||
-          product.name.includes('หน้า')
+          product.name.includes('โทนเนอร์') ||
+          product.id === 1 || // สเปรย์น้ำตบว่านตาลเดี่ยว
+          product.id === 2 || // โทนเนอร์สามสหาย
+          product.id === 7    // โทนเนอร์หัวไชเท้าสกัด
         );
-      case 'hair':
+      case 'oral':
+        // สินค้าเกี่ยวกับการดูแลช่องปาก
         return products.filter(product => 
-          product.name.includes('ผม') || 
-          product.name.includes('แชมพู')
+          product.name.includes('ปาก') ||
+          product.id === 4    // น้ำยาบ้วนปากกานพลูสกัด
         );
-      case 'health':
+      case 'drink':
+        // เครื่องดื่มสมุนไพรและของกิน
         return products.filter(product => 
-          product.name.includes('นวด') || 
-          product.name.includes('ยาหม่อง') || 
-          product.name.includes('ประคบ') ||
-          product.name.includes('ชา') ||
-          product.name.includes('น้ำมัน')
+          product.name.includes('น้ำดื่ม') || 
+          product.name.includes('ทะลวง') ||
+          product.id === 3 || // ทะลวงหลอดเลือดพลัส
+          product.id === 5 || // น้ำดื่มสุขชะลอวัย สูตรขมิ้นชัน
+          product.id === 6    // น้ำดื่มสุขชะลอวัย สูตรกระชาย
         );
       default:
         return products;
@@ -57,12 +60,12 @@ const ProductList = () => {
             สินค้าของเรา
           </motion.h2>
           <motion.p 
-            className="text-sm md:text-base text-gray-600 max-w-2xl mx-auto px-2 font-light"
+            className="text-xs md:text-sm text-gray-600 max-w-2xl mx-auto px-2 font-light"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            จำนวนขึ้นสินค้าขึ้นอยู่กับรอบผลิต ติดตามที่หน้า Facebook
+            จำนวนสินค้าขึ้นอยู่กับรอบผลิต ติดตามที่หน้า Facebook
           </motion.p>
         </div>
         
@@ -89,24 +92,34 @@ const ProductList = () => {
             สินค้าขายดี
           </button>
           <button
-            onClick={() => setActiveFilter('skin')}
+            onClick={() => setActiveFilter('skincare')}
             className={`px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all ${
-              activeFilter === 'skin'
+              activeFilter === 'skincare'
                 ? 'bg-[var(--primary-green)] text-white shadow-md'
                 : 'bg-[var(--light-green)] text-gray-600 hover:text-[var(--primary-green)]'
             }`}
           >
-            ผลิตภัณฑ์ดูแลผิว
+            บำรุงผิวหน้า-ผิวกาย
           </button>
           <button
-            onClick={() => setActiveFilter('health')}
+            onClick={() => setActiveFilter('oral')}
             className={`px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all ${
-              activeFilter === 'health'
+              activeFilter === 'oral'
                 ? 'bg-[var(--primary-green)] text-white shadow-md'
                 : 'bg-[var(--light-green)] text-gray-600 hover:text-[var(--primary-green)]'
             }`}
           >
-            สมุนไพรบำรุงสุขภาพ
+            ดูแลช่องปาก
+          </button>
+          <button
+            onClick={() => setActiveFilter('drink')}
+            className={`px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all ${
+              activeFilter === 'drink'
+                ? 'bg-[var(--primary-green)] text-white shadow-md'
+                : 'bg-[var(--light-green)] text-gray-600 hover:text-[var(--primary-green)]'
+            }`}
+          >
+            เครื่องดื่มสมุนไพร
           </button>
         </div>
         
