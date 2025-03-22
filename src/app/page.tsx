@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import ProductList from '@/components/ProductList';
+import ReviewCarousel from '@/components/ReviewCarousel';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -16,6 +17,9 @@ export default function Home() {
         <Features />
         <div id="products">
           <ProductList />
+        </div>
+        <div id="reviews">
+          <ReviewCarousel />
         </div>
         <div id="contact">
           <Contact />

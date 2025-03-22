@@ -69,6 +69,12 @@ const Header = () => {
             สินค้าของเรา
           </button>
           <button 
+            onClick={() => handleLinkClick('reviews')} 
+            className="text-gray-700 hover:text-[var(--primary-green)]"
+          >
+            รีวิวจากลูกค้า
+          </button>
+          <button 
             onClick={() => handleLinkClick('contact')} 
             className="text-gray-700 hover:text-[var(--primary-green)]"
           >
@@ -114,6 +120,12 @@ const Header = () => {
               className="text-gray-700 hover:text-[var(--primary-green)] text-left"
             >
               สินค้าของเรา
+            </button>
+            <button 
+              onClick={() => handleLinkClick('reviews')}
+              className="text-gray-700 hover:text-[var(--primary-green)] text-left"
+            >
+              รีวิวจากลูกค้า
             </button>
             <button 
               onClick={() => handleLinkClick('contact')}

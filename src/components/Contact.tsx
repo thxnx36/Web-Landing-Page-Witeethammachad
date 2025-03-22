@@ -44,7 +44,7 @@ const Contact = () => {
                 <FaMapMarkerAlt className="text-[var(--primary-green)] mt-1 mr-3 flex-shrink-0 text-base sm:text-lg" />
                 <div>
                   <p className="font-medium text-[var(--text-dark)] text-sm sm:text-base mb-1">ที่อยู่</p>
-                  <p className="text-gray-600 text-xs sm:text-sm font-light">F7W7+96 ตำบล น้ำแวน อำเภอ เชียงคำ พะเยา 56110</p>
+                  <p className="text-gray-600 text-xs sm:text-sm font-light">99 ตำบล น้ำแวน อำเภอ เชียงคำ พะเยา 56110</p>
                 </div>
               </div>
               
